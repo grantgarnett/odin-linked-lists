@@ -96,4 +96,19 @@ class LinkedList
 
     nil
   end
+
+  def to_s 
+    return "" if @head.nil?
+
+    current_node = @head
+    string_of_vals = ""
+
+    until current_node.nil? 
+      string_of_vals << "(#{current_node.value}) -> "
+      current_node = current_node.next
+    end
+    string_of_vals << "nil"
+    
+    string_of_vals
+  end
 end

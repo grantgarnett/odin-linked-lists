@@ -83,4 +83,17 @@ class LinkedList
 
     false
   end
+
+  def index(value) 
+    current_node = @head 
+    index_at = 0
+
+    until current_node.nil?
+      return index_at if current_node.value == value
+      index_at += 1
+      current_node = current_node.next
+    end
+
+    nil
+  end
 end

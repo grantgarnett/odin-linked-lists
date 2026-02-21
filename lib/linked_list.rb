@@ -1,8 +1,6 @@
 require_relative "node"
 
 class LinkedList 
-  attr_reader :head, :tail
-
   def initialize 
     @head = nil
     @tail = nil
@@ -42,5 +40,15 @@ class LinkedList
     end
 
     count
+  end
+
+  def head 
+    return nil if @head.nil?
+    @head.value
+  end
+
+  def tail 
+    return nil if @tail.nil?
+    @tail.value
   end
 end

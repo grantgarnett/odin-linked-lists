@@ -8,7 +8,7 @@ class Node
     @next_node = next_node
   end
 
-  def change_pointer(new_node) 
+  def update_pointer(new_node) 
     @next_node = new_node
   end
 end

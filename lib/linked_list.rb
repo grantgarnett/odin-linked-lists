@@ -29,7 +29,7 @@ class LinkedList
   end
 
   def size
-    return 0 if @head == nil 
+    return 0 if @head.nil?
 
     current_node = @head 
     count = 1
@@ -50,5 +50,18 @@ class LinkedList
   def tail 
     return nil if @tail.nil?
     @tail.value
+  end
+
+  def at(index)
+    current_node = @head 
+    index_at = 0
+
+    until current_node.nil?
+      return current_node.value if index_at == index
+      index_at += 1
+      current_node = current_node.next
+    end
+
+    nil
   end
 end

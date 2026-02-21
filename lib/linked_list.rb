@@ -2,7 +2,7 @@ require_relative "node"
 
 class LinkedList 
   attr_reader :head, :tail
-  
+
   def initialize 
     @head = nil
     @tail = nil
@@ -16,6 +16,17 @@ class LinkedList
     else
       @tail.update_pointer(new_node)
       @tail = new_node
+    end
+  end
+
+  def prepend(value) 
+    new_node = Node.new(value)
+
+    if @head.nil? 
+      @head = @tail = new_node
+    else
+      new_node.update_pointer(@head)
+      @head = new_node 
     end
   end
 end

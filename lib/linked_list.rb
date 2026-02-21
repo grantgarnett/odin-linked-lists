@@ -64,4 +64,12 @@ class LinkedList
 
     nil
   end
+
+  def pop
+    return nil if @head.nil? 
+
+    removed_val = @head 
+    @head = @head.next 
+    removed_val
+  end
 end

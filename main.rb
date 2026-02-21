@@ -7,7 +7,9 @@ puts test.tail
 test.append(1)
 test.prepend(2)
 test.append(3)
-puts "testing index:"
+puts "testing pop:"
+puts test.head 
 puts test.at(1)
-puts test.at(2)
-puts test.at(3)
+test.pop
+puts test.head 
+puts test.at(1)

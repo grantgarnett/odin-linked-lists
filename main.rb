@@ -5,5 +5,6 @@ test = LinkedList.new
 test.append(1)
 test.prepend(2)
 test.append(3)
-puts "testing #to_s"
+puts "testing #insert_at"
+test.insert_at(1, 25, 14, -1)
 puts test.to_s

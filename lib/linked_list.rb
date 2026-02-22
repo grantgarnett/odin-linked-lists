@@ -1,6 +1,8 @@
 require_relative "node"
 
 class LinkedList 
+  attr_reader :head
+
   def initialize 
     @head = nil
     @tail = nil
@@ -108,7 +110,35 @@ class LinkedList
       current_node = current_node.next
     end
     string_of_vals << "nil"
-    
+
     string_of_vals
+  end
+
+  def insert_at(index, *values)
+    raise IndexError if (index < 0 || index > self.size)
+
+    iterating_node = self.object_at(index - 1)
+    after = self.object_at(index)
+
+    values.each do |value|
+      new_node = Node.new(value)
+      iterating_node.update_pointer(new_node)
+      iterating_node = new_node
+    end
+
+    iterating_node.update_pointer(after)
+  end
+
+  def object_at(index) 
+    current_node = @head 
+    index_at = 0
+
+    until current_node.nil?
+      return current_node if index_at == index
+      index_at += 1
+      current_node = current_node.next
+    end
+
+    nil
   end
 end

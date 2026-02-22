@@ -141,4 +141,12 @@ class LinkedList
 
     nil
   end
+
+  def remove_at(index)
+    raise IndexError if (index < 0 || index > self.size)
+
+    before = self.object_at(index - 1)
+    after = self.object_at(index + 1)
+    before.update_pointer(after)
+  end
 end
